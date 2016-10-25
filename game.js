@@ -24,22 +24,22 @@ function setPiece(player, column, row) {
 }
 
 // get state of cell
-function getPiece(column, row) {
+function getState(column, row) {
   return gamePieceArray[column][row];
 }
 
 
-// $(document).ready(function() {
-//     var user = 1;
-//
-//     $('.cell').onClick(
-//         if (user === 1) {
-//             $(this).css({'background-color': 'red'});
-//             user = 2;
-//         } else {
-//             $(this).css({'background-color': 'black'});
-//             user = 1;
-//         };
-//     );
-//
-// });
+$(document).ready(function() {
+    var user = 1;
+    initializeBoard();
+
+    $('.cell').on('click', function() {
+        var cellId = $(this).attr('id');
+        var column = parseInt(cellId[0]) - 1;
+        var row = parseInt(cellId[2]) - 1;
+        var state = getState(column, row);
+        if (state === 'empty') {
+            $(this).css({'background-color': 'red'});
+        }
+    });
+});
