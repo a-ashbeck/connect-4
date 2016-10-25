@@ -27,3 +27,19 @@ function setPiece(player, column, row) {
 function getPiece(column, row) {
   return gamePieceArray[column][row];
 }
+
+
+// $(document).ready(function() {
+//     var user = 1;
+//
+//     $('.cell').onClick(
+//         if (user === 1) {
+//             $(this).css({'background-color': 'red'});
+//             user = 2;
+//         } else {
+//             $(this).css({'background-color': 'black'});
+//             user = 1;
+//         };
+//     );
+//
+// });
